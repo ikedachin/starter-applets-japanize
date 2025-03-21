@@ -13,61 +13,64 @@
 // limitations under the License.
 
 export default {
-  'A/V captions': {
+  'A/V キャプション': {
+  // 'A/V captions': {
     emoji: '👀',
-    prompt: `For each scene in this video, generate captions that describe the \
-    scene along with any spoken text placed in quotation marks. Place each \
-    caption into an object sent to set_timecodes with the timecode of the caption \
-    in the video.`,
+    prompt: `このビデオの各シーンに対して、シーンを説明するキャプションを生成し、発話されたテキストは引用符で囲んで記載してください。
+    各キャプションをset_timecodesに送信されるオブジェクトに配置し、ビデオ内のキャプションのタイムコードも含めてください。`,
     isList: true
   },
 
-  Paragraph: {
+  '要約': {
+  // Paragraph: {
     emoji: '📝',
-    prompt: `Generate a paragraph that summarizes this video. Keep it to 3 to 5 \
-sentences. Place each sentence of the summary into an object sent to \
-set_timecodes with the timecode of the sentence in the video.`
+    prompt: `このビデオを要約する段落を生成してください。3〜5文に収めてください。\
+    要約の各文を、ビデオ内のその文のタイムコードとともに、set_timecodesに送信されるオブジェクトに配置してください。`
   },
 
-  'Key moments': {
+  '重要な瞬間の抽出': {
+  // 'Key moments': {
     emoji: '🔑',
-    prompt: `Generate bullet points for the video. Place each bullet point into an \
-object sent to set_timecodes with the timecode of the bullet point in the video.`,
+    prompt: `ビデオの箇条書きを生成してください。各箇条書き項目を、ビデオ内のその項目のタイムコードとともに、set_timecodesに送信されるオブジェクトに配置してください。`,
     isList: true
   },
 
-  Table: {
+  // Table: {
+  '表形式': {
     emoji: '🤓',
-    prompt: `Choose 5 key shots from this video and call set_timecodes_with_objects \
-with the timecode, text description of 10 words or less, and a list of objects \
-visible in the scene (with representative emojis).`
+    prompt: `このビデオから5つの重要なショットを選び、set_timecodes_with_objectsを呼び出してください。\
+    その際、タイムコード、10語以内のテキスト説明、およびシーンに見える物体のリスト（代表的な絵文字付き）を含めてください。`
   },
 
-  Haiku: {
+  '俳句': {
+  // Haiku: {
     emoji: '🌸',
-    prompt: `Generate a haiku for the video. Place each line of the haiku into an \
-object sent to set_timecodes with the timecode of the line in the video. Make sure \
-to follow the syllable count rules (5-7-5).`
+    prompt: `ビデオのための俳句を生成してください。\
+    俳句の各行を、ビデオ内のその行のタイムコードとともに、set_timecodesに送信されるオブジェクトに配置してください。必ず俳句のルール「五七五」に従ってください。`
   },
 
-  Chart: {
+　Chart: {
     emoji: '📈',
     prompt: input =>
-      `Generate chart data for this video based on the following instructions: \
-${input}. Call set_timecodes_with_numeric_values once with the list of data values and timecodes.`,
+      `ビデオのためのチャートデータを以下の指示に基づいて生成してください： \
+${input}。 データ値とタイムコードのリストを使用して、set_timecodes_with_numeric_valuesを一度呼び出してください。`,
     subModes: {
-      Excitement:
-        'for each scene, estimate the level of excitement on a scale of 1 to 10',
-      Importance:
-        'for each scene, estimate the level of overall importance to the video on a scale of 1 to 10',
-      'Number of people': 'for each scene, count the number of people visible'
+      '興奮度':
+      // Excitement:
+        '各シーンに対して、興奮度を1から10のスケールで推定してください。',
+      '重要性':
+      // Importance:
+        '各シーンに対して、ビデオ全体における重要度を1から10のスケールで推定してください。',
+      '人数': 
+      // 'Number of people': 
+        '各シーンで、視認できる人数を数えてください。'
     }
   },
 
   Custom: {
     emoji: '🔧',
     prompt: input =>
-      `Call set_timecodes once using the following instructions: ${input}`,
+      `以下の指示を使用して、set_timecodesを一度呼び出してください。: ${input}`,
     isList: true
   }
 }

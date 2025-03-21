@@ -177,10 +177,10 @@ export default function VideoPlayer({
         <div className="emptyVideo">
           <p>
             {isLoadingVideo
-              ? 'Processing video...'
+              ? '処理中...'
               : videoError
-              ? 'Error processing video.'
-              : 'Drag and drop a video file here to get started.'}
+              ? 'ビデオの処理に失敗しました'
+              : 'ここにビデオファイルをドラッグ＆ドロップしてください'}
           </p>
         </div>
       )}

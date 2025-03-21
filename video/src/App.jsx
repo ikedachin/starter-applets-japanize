@@ -56,6 +56,7 @@ export default function App() {
     setActiveMode(mode)
     setIsLoading(true)
     setChartLabel(chartPrompt)
+    // console.log(mode);
 
     const resp = await generateContent({
       text: isCustomMode
@@ -146,7 +147,7 @@ export default function App() {
                       <>
                         <h2>Custom prompt:</h2>
                         <textarea
-                          placeholder="Type a custom prompt..."
+                          placeholder="オリジナルのプロンプトを入力してください..."
                           value={customPrompt}
                           onChange={e => setCustomPrompt(e.target.value)}
                           onKeyDown={e => {
@@ -177,7 +178,7 @@ export default function App() {
                         </div>
                         <textarea
                           className={c({active: isCustomChartMode})}
-                          placeholder="Or type a custom prompt..."
+                          placeholder="もしくは、プロンプトを入力してください..."
                           value={chartPrompt}
                           onChange={e => setChartPrompt(e.target.value)}
                           onKeyDown={e => {
@@ -273,7 +274,8 @@ export default function App() {
               Waiting for model<span>...</span>
             </div>
           ) : timecodeList ? (
-            activeMode === 'Table' ? (
+            activeMode === '表形式' ? (
+            // activeMode === 'Table' ? (
               <table>
                 <thead>
                   <tr>
